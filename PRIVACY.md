@@ -63,4 +63,4 @@ discover feeds for the page you are viewing.
 
 ## Contact
 
-Questions about this policy: `<REPLACE WITH YOUR CONTACT EMAIL OR PROFILE URL>`.
+Questions about this policy: `<https://github.com/rzhy1/RSSLiveLinks-MV3>`.

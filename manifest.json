@@ -9,6 +9,8 @@
 
    "description": "__MSG_extDesc__",
 
+   "homepage_url": "https://github.com/rzhy1/RSSLiveLinks-MV3",
+
    "icons": {
       "128": "img/rssll_128x128.png",
       "16": "img/rssll_16x16.png",
