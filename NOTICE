@@ -1,0 +1,69 @@
+RSS Live Links MV3 - NOTICE
+===========================
+
+This distribution is a MODIFIED version of "RSS Live Links" 1.9.2.6,
+Copyright 2010, 2012 Martin Bartlett.
+
+RSS Live Links is free software: you can redistribute it and/or modify it under
+the terms of the GNU Lesser General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version.
+
+RSS Live Links is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+details.
+
+The full license texts are shipped with this package:
+
+  * LICENSE  - GNU Lesser General Public License version 3 (LGPL-3.0)
+  * COPYING  - GNU General Public License version 3 (GPL-3.0), which LGPL-3.0
+               incorporates by reference
+
+If you did not receive these files, see <https://www.gnu.org/licenses/>.
+
+
+MODIFICATIONS
+-------------
+Modified 2026-10-28 by rzhy1 (https://github.com/rzhy1):
+
+  * Migrated the extension from Manifest V2 to Manifest V3: added
+    service_worker.js (offscreen-document bootstrap plus browser UI proxy) and
+    bgbridge.js (message bridge used by the popup, options and subscribe pages).
+  * Renamed this distribution to "RSS Live Links MV3" and documented that it is
+    a fork. The internal configuration id ("RSS Live Links") and the bookmark
+    folder name are intentionally unchanged so existing user data, exported
+    configurations and bookmark folders keep working.
+  * Bug fixes: items no longer fail to open in a tab from the offscreen
+    document, badge text and icon updates work under MV3, read/unread state no
+    longer needs a second click, feed parse failures report the server response,
+    tab feed candidates are scoped and cleaned up correctly (including races on
+    tab close), and several original typos / variable scope errors were fixed.
+  * Performance and memory work: cached icon animation frames, truncated item
+    descriptions in state snapshots, exponential backoff for failing feeds,
+    debounced seen-state persistence, SHA-256 hashing of feed source text, and
+    cancellation of queued web-worker requests.
+  * Feed discovery: stricter feed detection (content-type allow list, explicit
+    rejection of HTML documents), probing of 24 common feed paths per site
+    origin with a 5 minute cache, HEAD-to-GET fallback for servers that reject
+    HEAD, and URL/title based de-duplication of equivalent feeds.
+  * Added LICENSE, COPYING, NOTICE and the privacy policy.
+
+Modified files: manifest.json, background.js, background.html, background
+scripts referenced by it, feed.js, feedWorker.js, findrss.js, tabrss.js,
+xmlhttp.js, popup.js, popup.html, context.js, subscribe.js, subscribe.html,
+updated.js, options.html, options/options.js, options/i18n.js, options/ui.js,
+_locales/*/messages.json.
+
+New files: service_worker.js, bgbridge.js, LICENSE, COPYING, NOTICE,
+PRIVACY.md.
+
+
+SOURCE CODE
+-----------
+Corresponding source code for this modified version is published at:
+
+  <REPLACE WITH YOUR SOURCE REPOSITORY URL, e.g. https://github.com/rzhy1/rss>
+
+The original project ("RSS Live Links" by Martin Bartlett) was distributed
+through the Chrome Web Store and is no longer available there.

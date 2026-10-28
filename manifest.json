@@ -1,0 +1,57 @@
+{
+
+   "manifest_version": 3,
+
+   "name": "__MSG_extName__",
+   "version": "1.9.2.7",
+   "minimum_chrome_version": "109",
+   "default_locale": "en",
+
+   "description": "__MSG_extDesc__",
+
+   "icons": {
+      "128": "img/rssll_128x128.png",
+      "16": "img/rssll_16x16.png",
+      "19": "img/rssll_19x19.png",
+      "32": "img/rssll_32x32.png",
+      "48": "img/rssll_48x48.png"
+   },
+
+   "action": {
+      "default_icon": "img/rssll_19x19.png",
+      "default_popup": "popup.html",
+      "default_title": "__MSG_extTitle__"
+   },
+
+   "background": {
+      "service_worker": "service_worker.js"
+   },
+
+   "options_page": "options.html",
+
+   "permissions": [
+      "contextMenus",
+      "bookmarks",
+      "tabs",
+      "storage",
+      "offscreen",
+      "scripting"
+   ],
+
+   "host_permissions": [
+      "http://*/",
+      "https://*/"
+   ],
+
+   "content_security_policy": {
+      "extension_pages": "script-src 'self'; object-src 'self'"
+   },
+
+   "content_scripts": [
+      {
+         "matches": ["http://*/*", "https://*/*"],
+         "js": ["findrss.js"],
+         "run_at": "document_idle"
+      }
+   ]
+}
